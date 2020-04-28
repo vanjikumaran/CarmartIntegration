@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="ProcessFileReadingSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log/>
+    <datamapper config="gov:datamapper/csvtoxmlDMconfig.dmc" inputSchema="gov:datamapper/csvtoxmlDMconfig_inputSchema.json" inputType="XML" outputSchema="gov:datamapper/csvtoxmlDMconfig_outputSchema.json" outputType="XML" xsltStyleSheet="gov:datamapper/csvtoxmlDMconfig_xsltStyleSheet.xml"/>
+    <log level="full"/>
+</sequence>

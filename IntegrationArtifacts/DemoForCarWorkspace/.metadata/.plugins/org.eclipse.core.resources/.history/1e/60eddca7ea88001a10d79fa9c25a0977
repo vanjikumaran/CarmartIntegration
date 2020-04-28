@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="EnterDataIntoCarTableSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <enrich>
+        <source clone="true" type="body"/>
+        <target action="child" property="REQUEST_PAYLOAD" type="property"/>
+    </enrich>
+    <property expression="//VehicleModelYear/year" name="uri.var.year" scope="default" type="STRING" xmlns:ns="http://org.apache.synapse/xsd"/>
+    <header name="Accept" scope="transport" value="application/json"/>
+    <call>
+        <endpoint key="YearPerformanceEP"/>
+    </call>
+    <log level="full">
+        <property name="Log1" value="***************FULL LOG from**********************"/>
+    </log>
+    <property expression="json-eval($.Entries.Entry[0].eningePower)" name="EnginePowerPro" scope="default" type="STRING"/>
+    <log level="custom">
+        <property expression="$ctx:EnginePowerPro" name="EnginePower" xmlns:ns="http://org.apache.synapse/xsd"/>
+    </log>
+    <enrich>
+        <source clone="true" property="REQUEST_PAYLOAD" type="property"/>
+        <target action="sibling" type="body"/>
+    </enrich>
+    <payloadFactory media-type="xml">
+        <format>
+            <dat:insert_VehicleModelYear_operation xmlns:dat="http://ws.wso2.org/dataservice">
+                <dat:year>$1</dat:year>
+                <dat:make>$2</dat:make>
+                <dat:model>$3</dat:model>
+                <dat:EnginePower>$4</dat:EnginePower>
+            </dat:insert_VehicleModelYear_operation>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="//VehicleModelYear/year" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <arg evaluator="xml" expression="//VehicleModelYear/make" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <arg evaluator="xml" expression="//VehicleModelYear/model" xmlns:ns="http://org.apache.synapse/xsd"/>
+            <arg evaluator="xml" expression="$ctx:EnginePowerPro" xmlns:ns="http://org.apache.synapse/xsd"/>
+        </args>
+    </payloadFactory>
+    <log level="full"/>
+    <property name="OUT_ONLY" scope="default" type="STRING" value=""/>
+    <property name="Action" scope="default" type="STRING" value="urn:select_with_key_VehicleModelYear_operation"/>
+    <send>
+        <endpoint key="CarDataServiceEP"/>
+    </send>
+</sequence>

@@ -1,0 +1,47 @@
+<data name="YearPerformanceDataService" serviceNamespace="" serviceGroup="" transports="http https">
+    <description/>
+    <config enableOData="false" id="default">
+      <property name="carbon_datasource_name">MySQLConnection</property>
+   </config>
+   <query id="insert_YearEnginePower_query" useConfig="default">
+      <sql>INSERT INTO YearEnginePower(year,eningePower) VALUES(?,?)</sql>
+      <param name="year" ordinal="1" sqlType="INTEGER"/>
+      <param name="eningePower" ordinal="2" sqlType="STRING"/>
+   </query>
+   <query id="select_with_key_YearEnginePower_query" useConfig="default">
+      <sql>SELECT ID, year, eningePower FROM YearEnginePower WHERE ID=?</sql>
+      <result element="YearEnginePowerCollection" rowName="YearEnginePower">
+         <element column="ID" name="ID" xsdType="xs:integer"/>
+         <element column="year" name="year" xsdType="xs:integer"/>
+         <element column="eningePower" name="eningePower" xsdType="xs:string"/>
+      </result>
+      <param name="ID" ordinal="1" sqlType="INTEGER"/>
+   </query>
+   <query id="select_all_YearEnginePower_query" useConfig="default">
+      <sql>SELECT ID, year, eningePower FROM YearEnginePower</sql>
+      <result element="YearEnginePowerCollection" rowName="YearEnginePower">
+         <element column="ID" name="ID" xsdType="xs:integer"/>
+         <element column="year" name="year" xsdType="xs:integer"/>
+         <element column="eningePower" name="eningePower" xsdType="xs:string"/>
+      </result>
+   </query>
+   <query id="delete_YearEnginePower_query" useConfig="default">
+      <sql>DELETE FROM YearEnginePower WHERE ID=?</sql>
+      <param name="ID" ordinal="1" sqlType="INTEGER"/>
+   </query>
+   <query id="update_YearEnginePower_query" useConfig="default">
+      <sql>UPDATE YearEnginePower SET year=?,eningePower=? WHERE ID=?</sql>
+      <param name="year" ordinal="1" sqlType="INTEGER"/>
+      <param name="eningePower" ordinal="2" sqlType="STRING"/>
+      <param name="ID" ordinal="3" sqlType="INTEGER"/>
+   </query>
+   <query id="select_with_year_YearEnginePower_query" useConfig="default">
+      <sql>SELECT ID, year, eningePower FROM YearEnginePower WHERE year=?</sql>
+      <result element="Entries" rowName="Entry">
+         <element column="ID" name="ID" xsdType="string"/>
+         <element column="year" name="year" xsdType="string"/>
+         <element column="eningePower" name="eningePower" xsdType="string"/>
+      </result>
+      <param name="year" ordinal="1" sqlType="INTEGER"/>
+   </query>
+</data>

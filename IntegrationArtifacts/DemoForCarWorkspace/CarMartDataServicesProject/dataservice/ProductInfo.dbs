@@ -1,0 +1,89 @@
+<data name="ProductInfo" serviceNamespace="" serviceGroup="" transports="http https">
+   <config id="default">
+      <property name="carbon_datasource_name">MySQLConnection</property>
+   </config>
+   <query id="select_with_key_PRODUCT_INFO_query" useConfig="default">
+      <sql>SELECT PRODUCT_ID, NAME, PRODUCT_TYPE, DESCRIPTION, PRICE_IN_ROBUX, SALES, PRICE_IN_TICKETS FROM PRODUCT_INFO WHERE PRODUCT_ID=?</sql>
+      <param name="PRODUCT_ID" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <result element="PRODUCT_INFOCollection" rowName="PRODUCT_INFO">
+         <element column="PRODUCT_ID" name="PRODUCT_ID" xsdType="xs:integer"/>
+         <element column="NAME" name="NAME" xsdType="xs:string"/>
+         <element column="PRODUCT_TYPE" name="PRODUCT_TYPE" xsdType="xs:string"/>
+         <element column="DESCRIPTION" name="DESCRIPTION" xsdType="xs:string"/>
+         <element column="PRICE_IN_ROBUX" name="PRICE_IN_ROBUX" xsdType="xs:integer"/>
+         <element column="SALES" name="SALES" xsdType="xs:integer"/>
+         <element column="PRICE_IN_TICKETS" name="PRICE_IN_TICKETS" xsdType="xs:integer"/>
+      </result>
+   </query>
+   <query id="update_PRODUCT_INFO_query" useConfig="default">
+      <sql>UPDATE PRODUCT_INFO SET NAME=?,PRODUCT_TYPE=?,DESCRIPTION=?,PRICE_IN_ROBUX=?,SALES=?,PRICE_IN_TICKETS=? WHERE PRODUCT_ID=?</sql>
+      <param name="NAME" ordinal="1" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="PRODUCT_TYPE" ordinal="2" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="DESCRIPTION" ordinal="3" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="PRICE_IN_ROBUX" ordinal="4" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="SALES" ordinal="5" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="PRICE_IN_TICKETS" ordinal="6" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="PRODUCT_ID" ordinal="7" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+   </query>
+   <query id="insert_PRODUCT_INFO_query" useConfig="default">
+      <sql>INSERT INTO PRODUCT_INFO(PRODUCT_ID,NAME,PRODUCT_TYPE,DESCRIPTION,PRICE_IN_ROBUX,SALES,PRICE_IN_TICKETS) VALUES(?,?,?,?,?,?,?)</sql>
+      <param name="PRODUCT_ID" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="NAME" ordinal="2" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="PRODUCT_TYPE" ordinal="3" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="DESCRIPTION" ordinal="4" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="PRICE_IN_ROBUX" ordinal="5" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="SALES" ordinal="6" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="PRICE_IN_TICKETS" ordinal="7" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+   </query>
+   <query id="select_all_PRODUCT_INFO_query" useConfig="default">
+      <sql>SELECT PRODUCT_ID, NAME, PRODUCT_TYPE, DESCRIPTION, PRICE_IN_ROBUX, SALES, PRICE_IN_TICKETS FROM PRODUCT_INFO</sql>
+      <result element="PRODUCT_INFOCollection" rowName="PRODUCT_INFO">
+         <element column="PRODUCT_ID" name="PRODUCT_ID" xsdType="xs:integer"/>
+         <element column="NAME" name="NAME" xsdType="xs:string"/>
+         <element column="PRODUCT_TYPE" name="PRODUCT_TYPE" xsdType="xs:string"/>
+         <element column="DESCRIPTION" name="DESCRIPTION" xsdType="xs:string"/>
+         <element column="PRICE_IN_ROBUX" name="PRICE_IN_ROBUX" xsdType="xs:integer"/>
+         <element column="SALES" name="SALES" xsdType="xs:integer"/>
+         <element column="PRICE_IN_TICKETS" name="PRICE_IN_TICKETS" xsdType="xs:integer"/>
+      </result>
+   </query>
+   <query id="delete_PRODUCT_INFO_query" useConfig="default">
+      <sql>DELETE FROM PRODUCT_INFO WHERE PRODUCT_ID=?</sql>
+      <param name="PRODUCT_ID" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+   </query>
+   <operation name="select_with_key_PRODUCT_INFO_operation">
+      <call-query href="select_with_key_PRODUCT_INFO_query">
+         <with-param name="PRODUCT_ID" query-param="PRODUCT_ID"/>
+      </call-query>
+   </operation>
+   <operation name="update_PRODUCT_INFO_operation">
+      <call-query href="update_PRODUCT_INFO_query">
+         <with-param name="PRODUCT_TYPE" query-param="PRODUCT_TYPE"/>
+         <with-param name="PRICE_IN_TICKETS" query-param="PRICE_IN_TICKETS"/>
+         <with-param name="DESCRIPTION" query-param="DESCRIPTION"/>
+         <with-param name="SALES" query-param="SALES"/>
+         <with-param name="PRODUCT_ID" query-param="PRODUCT_ID"/>
+         <with-param name="NAME" query-param="NAME"/>
+         <with-param name="PRICE_IN_ROBUX" query-param="PRICE_IN_ROBUX"/>
+      </call-query>
+   </operation>
+   <operation name="delete_PRODUCT_INFO_operation">
+      <call-query href="delete_PRODUCT_INFO_query">
+         <with-param name="PRODUCT_ID" query-param="PRODUCT_ID"/>
+      </call-query>
+   </operation>
+   <operation name="insert_PRODUCT_INFO_operation">
+      <call-query href="insert_PRODUCT_INFO_query">
+         <with-param name="PRODUCT_TYPE" query-param="PRODUCT_TYPE"/>
+         <with-param name="PRICE_IN_TICKETS" query-param="PRICE_IN_TICKETS"/>
+         <with-param name="DESCRIPTION" query-param="DESCRIPTION"/>
+         <with-param name="PRODUCT_ID" query-param="PRODUCT_ID"/>
+         <with-param name="SALES" query-param="SALES"/>
+         <with-param name="NAME" query-param="NAME"/>
+         <with-param name="PRICE_IN_ROBUX" query-param="PRICE_IN_ROBUX"/>
+      </call-query>
+   </operation>
+   <operation name="select_all_PRODUCT_INFO_operation">
+      <call-query href="select_all_PRODUCT_INFO_query"/>
+   </operation>
+</data>

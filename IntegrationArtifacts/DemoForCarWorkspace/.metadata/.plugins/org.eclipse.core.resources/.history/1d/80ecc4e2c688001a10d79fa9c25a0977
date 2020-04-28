@@ -1,0 +1,7 @@
+<data name="YearPerformanceDataService" serviceNamespace="" serviceGroup="" transports="http https">
+    <description/>
+    <config enableOData="false" id="default">
+      <property name="carbon_datasource_name">MySQLConnection</property>
+   </config>
+   
+</data>

@@ -1,0 +1,75 @@
+<data name="CarYearCollectionData" serviceNamespace="" serviceGroup="" transports="http https">
+   <config id="default">
+      <property name="carbon_datasource_name">MySQLConnection</property>
+   </config>
+   <query id="insert_VehicleModelYear_query" useConfig="default">
+      <sql>INSERT INTO VehicleModelYear(year,make,model,EnginePower) VALUES(?,?,?,?)</sql>
+      <param name="year" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="make" ordinal="2" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="model" ordinal="3" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="EnginePower" ordinal="4" paramType="SCALAR" sqlType="STRING" type="IN"/>
+   </query>
+   <query id="delete_VehicleModelYear_query" useConfig="default">
+      <sql>DELETE FROM VehicleModelYear WHERE id=?</sql>
+      <param name="id" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+   </query>
+   <query id="update_VehicleModelYear_query" useConfig="default">
+      <sql>UPDATE VehicleModelYear SET year=?,make=?,model=?,EnginePower=? WHERE id=?</sql>
+      <param name="year" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <param name="make" ordinal="2" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="model" ordinal="3" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="EnginePower" ordinal="4" paramType="SCALAR" sqlType="STRING" type="IN"/>
+      <param name="id" ordinal="5" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+   </query>
+   <query id="select_all_VehicleModelYear_query" useConfig="default">
+      <sql>SELECT id, year, make, model, EnginePower FROM VehicleModelYear</sql>
+      <result element="VehicleModelYearCollection" rowName="VehicleModelYear">
+         <element column="id" name="id" xsdType="xs:integer"/>
+         <element column="year" name="year" xsdType="xs:integer"/>
+         <element column="make" name="make" xsdType="xs:string"/>
+         <element column="model" name="model" xsdType="xs:string"/>
+         <element column="EnginePower" name="EnginePower" xsdType="xs:string"/>
+      </result>
+   </query>
+   <query id="select_with_key_VehicleModelYear_query" useConfig="default">
+      <sql>SELECT id, year, make, model, EnginePower FROM VehicleModelYear WHERE id=?</sql>
+      <param name="id" ordinal="1" paramType="SCALAR" sqlType="INTEGER" type="IN"/>
+      <result element="VehicleModelYearCollection" rowName="VehicleModelYear">
+         <element column="id" name="id" xsdType="xs:integer"/>
+         <element column="year" name="year" xsdType="xs:integer"/>
+         <element column="make" name="make" xsdType="xs:string"/>
+         <element column="model" name="model" xsdType="xs:string"/>
+         <element column="EnginePower" name="EnginePower" xsdType="xs:string"/>
+      </result>
+   </query>
+   <operation name="update_VehicleModelYear_operation">
+      <call-query href="update_VehicleModelYear_query">
+         <with-param name="year" query-param="year"/>
+         <with-param name="model" query-param="model"/>
+         <with-param name="EnginePower" query-param="EnginePower"/>
+         <with-param name="id" query-param="id"/>
+         <with-param name="make" query-param="make"/>
+      </call-query>
+   </operation>
+   <operation name="delete_VehicleModelYear_operation">
+      <call-query href="delete_VehicleModelYear_query">
+         <with-param name="id" query-param="id"/>
+      </call-query>
+   </operation>
+   <operation name="select_with_key_VehicleModelYear_operation">
+      <call-query href="select_with_key_VehicleModelYear_query">
+         <with-param name="id" query-param="id"/>
+      </call-query>
+   </operation>
+   <operation name="insert_VehicleModelYear_operation">
+      <call-query href="insert_VehicleModelYear_query">
+         <with-param name="year" query-param="year"/>
+         <with-param name="model" query-param="model"/>
+         <with-param name="EnginePower" query-param="EnginePower"/>
+         <with-param name="make" query-param="make"/>
+      </call-query>
+   </operation>
+   <operation name="select_all_VehicleModelYear_operation">
+      <call-query href="select_all_VehicleModelYear_query"/>
+   </operation>
+</data>

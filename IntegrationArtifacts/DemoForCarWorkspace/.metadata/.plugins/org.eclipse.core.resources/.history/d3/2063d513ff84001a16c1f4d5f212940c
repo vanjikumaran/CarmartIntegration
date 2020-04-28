@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="EnterDataIntoCarTableSeq" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <payloadFactory media-type="xml">
+        <format>
+            <dat:insert_VehicleModelYear_operation xmlns:dat="http://ws.wso2.org/dataservice">
+                <dat:year>$1</dat:year>
+                <dat:make>$2</dat:make>
+                <dat:model>$3</dat:model>
+            </dat:insert_VehicleModelYear_operation>
+        </format>
+        <args>
+            <arg evaluator="xml" expression="//VehicleModelYear/year"/>
+            <arg evaluator="xml" expression="//VehicleModelYear/make"/>
+            <arg evaluator="xml" expression="//VehicleModelYear/model"/>
+        </args>
+    </payloadFactory>
+    <log level="full"/>
+    <send>
+        <endpoint key="CarDataServiceEP"/>
+    </send>
+</sequence>

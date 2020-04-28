@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="CarYearCollectionData" groupId="com.example.CarMartDataServicesProject.dataservice" version="1.0.0" type="service/dataservice" serverRole="DataServicesServer">
+        <file>dataservice/CarYearCollectionData.dbs</file>
+    </artifact>
+    <artifact name="ProductInfo" groupId="com.example.CarMartDataServicesProject.dataservice" version="1.0.0" type="service/dataservice" serverRole="DataServicesServer">
+        <file>dataservice/ProductInfo.dbs</file>
+    </artifact>
+    <artifact name="YearEnginePower_DataService" groupId="com.example.CarMartDataServicesProject.dataservice" version="1.0.0" type="service/dataservice" serverRole="DataServicesServer">
+        <file>dataservice/YearEnginePower_DataService.dbs</file>
+    </artifact>
+</artifacts>

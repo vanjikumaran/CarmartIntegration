@@ -1,0 +1,31 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "XML",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "VehicleModelYearCollection",
+  "type" : "object",
+  "properties" : {
+    "VehicleModelYear" : {
+      "id" : "http://wso2jsonschema.org/VehicleModelYear",
+      "type" : "array",
+      "items" : [ {
+        "id" : "http://wso2jsonschema.org/VehicleModelYear/0",
+        "type" : "object",
+        "properties" : {
+          "year" : {
+            "id" : "http://wso2jsonschema.org/VehicleModelYear/0/year",
+            "type" : "string"
+          },
+          "make" : {
+            "id" : "http://wso2jsonschema.org/VehicleModelYear/0/make",
+            "type" : "string"
+          },
+          "model" : {
+            "id" : "http://wso2jsonschema.org/VehicleModelYear/0/model",
+            "type" : "string"
+          }
+        }
+      } ]
+    }
+  }
+}

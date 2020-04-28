@@ -1,0 +1,1 @@
+<inboundEndpoint xmlns="http://ws.apache.org/ns/synapse" name="CarDataFileProcessingIEP" sequence="ProcessFileFaultSeq" onError="ProcessFileFaultSeq" protocol="file" suspend="false"><parameters/></inboundEndpoint>

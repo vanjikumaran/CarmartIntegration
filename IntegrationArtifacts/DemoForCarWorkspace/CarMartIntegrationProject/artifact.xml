@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ProcessFileFaultSeq" groupId="com.example.CarMartIntegrationProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ProcessFileFaultSeq.xml</file>
+    </artifact>
+    <artifact name="ProcessFileReadingSeq" groupId="com.example.CarMartIntegrationProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ProcessFileReadingSeq.xml</file>
+    </artifact>
+    <artifact name="CarDataFileProcessingIEP" groupId="com.example.CarMartIntegrationProject.inbound-endpoint" version="1.0.0" type="synapse/inbound-endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/inbound-endpoints/CarDataFileProcessingIEP.xml</file>
+    </artifact>
+    <artifact name="EnterDataIntoCarTableSeq" groupId="com.example.CarMartIntegrationProject.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/EnterDataIntoCarTableSeq.xml</file>
+    </artifact>
+    <artifact name="CarDataServiceEP" groupId="com.example.CarMartIntegrationProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/CarDataServiceEP.xml</file>
+    </artifact>
+    <artifact name="YearPerformanceEP" groupId="com.example.CarMartIntegrationProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/YearPerformanceEP.xml</file>
+    </artifact>
+</artifacts>

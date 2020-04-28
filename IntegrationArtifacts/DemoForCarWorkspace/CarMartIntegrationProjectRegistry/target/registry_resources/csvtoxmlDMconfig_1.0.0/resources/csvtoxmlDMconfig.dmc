@@ -1,0 +1,22 @@
+map_S_root_S_VehicleModelYearCollection = function(){ 
+var outputVehicleModelYearCollection={};
+
+var count_i_inputroot_21498f76_e498_4099_8182_d4128493b700 = 0;
+outputVehicleModelYearCollection =  {};
+outputVehicleModelYearCollection.VehicleModelYear =  [];
+
+for(i_inputroot_21498f76_e498_4099_8182_d4128493b700 in inputroot){
+outputVehicleModelYearCollection.VehicleModelYear[count_i_inputroot_21498f76_e498_4099_8182_d4128493b700] =  {};
+outputVehicleModelYearCollection.VehicleModelYear[count_i_inputroot_21498f76_e498_4099_8182_d4128493b700].year = inputroot[i_inputroot_21498f76_e498_4099_8182_d4128493b700].year;
+outputVehicleModelYearCollection.VehicleModelYear[count_i_inputroot_21498f76_e498_4099_8182_d4128493b700].make = inputroot[i_inputroot_21498f76_e498_4099_8182_d4128493b700].make;
+outputVehicleModelYearCollection.VehicleModelYear[count_i_inputroot_21498f76_e498_4099_8182_d4128493b700].model = inputroot[i_inputroot_21498f76_e498_4099_8182_d4128493b700].model;
+
+count_i_inputroot_21498f76_e498_4099_8182_d4128493b700++;
+}
+return outputVehicleModelYearCollection;
+};
+
+
+
+
+
