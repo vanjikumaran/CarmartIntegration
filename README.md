@@ -11,7 +11,7 @@ WSO2 ESB file integration usecase that demonstrate how integration engine helps 
 
 ### Demo
 
-![Demo](https://github.com/vanjikumaran/CarmartIntegration/blob/master/Doc/Images/Usecase.png)
+![Demo](https://github.com/vanjikumaran/CarmartIntegration/blob/master/Doc/Images/DropFile.png)
 
 
 
